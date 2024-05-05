@@ -22,6 +22,7 @@ import AppUnavailable from '@/app/components/app-unavailable'
 import { API_KEY, APP_ID, APP_INFO, isShowPrompt, promptTemplate } from '@/config'
 import type { Annotation as AnnotationType } from '@/types/log'
 import { addFileInfos, sortAgentSorts } from '@/utils/tools'
+import { validateLocale } from '@/i18n'
 
 const Main: FC = () => {
   const { t } = useTranslation()
@@ -47,7 +48,7 @@ const Main: FC = () => {
 
   useEffect(() => {
     if (APP_INFO?.title)
-      document.title = `${APP_INFO.title} - Powered by Dify`
+      document.title = `${APP_INFO.title}`
   }, [APP_INFO?.title])
 
   // onData change thought (the produce obj). https://github.com/immerjs/immer/issues/576
@@ -229,7 +230,8 @@ const Main: FC = () => {
 
         // fetch new conversation info
         const { user_input_form, opening_statement: introduction, file_upload, system_parameters }: any = appParams
-        setLocaleOnClient(APP_INFO.default_language, true)
+        const browserLanguage = navigator.language || APP_INFO.default_language
+        setLocaleOnClient(validateLocale(browserLanguage), true);
         setNewConversationInfo({
           name: t('app.chat.newChatDefaultName'),
           introduction,

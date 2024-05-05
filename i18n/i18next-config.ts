@@ -3,9 +3,12 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import commonEn from './lang/common.en'
 import commonZh from './lang/common.zh'
+import commonJa from './lang/common.ja'
 import appEn from './lang/app.en'
+import appJa from './lang/app.ja'
 import appZh from './lang/app.zh'
 import toolsEn from './lang/tools.en'
+import toolsJa from './lang/tools.ja'
 import toolsZh from './lang/tools.zh'
 import type { Locale } from '.'
 
@@ -16,6 +19,14 @@ const resources = {
       app: appEn,
       // tools
       tools: toolsEn,
+    },
+  },
+  'ja': {
+    translation: {
+      common: commonJa,
+      app: appJa,
+      // tools
+      tools: toolsJa,
     },
   },
   'zh-Hans': {

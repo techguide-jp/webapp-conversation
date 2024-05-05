@@ -3,11 +3,11 @@ export const APP_ID = `${process.env.NEXT_PUBLIC_APP_ID}`
 export const API_KEY = `${process.env.NEXT_PUBLIC_APP_KEY}`
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}`
 export const APP_INFO: AppInfo = {
-  title: 'Chat APP',
-  description: '',
+  title: 'Koi-Tre AI',
+  description: 'Koi-Tre AIは、恋愛のコミュニケーションを実践的に鍛えられるチャットサービスです。\n考えてアウトプットして改善していく。\n日々自身を成長させるための一手としてぜひ習慣的にお使いください⭐\nまず前提となる情報や希望の情報を入力し、始めてみましょう！',
   copyright: '',
   privacy_policy: '',
-  default_language: 'zh-Hans',
+  default_language: 'ja',
 }
 
 export const isShowPrompt = false

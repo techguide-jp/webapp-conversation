@@ -13,6 +13,7 @@ export type AppIconProps = {
 const AppIcon: FC<AppIconProps> = ({
   size = 'medium',
   rounded = false,
+  icon = '🤖', // Default icon is a robot
   background,
   className,
 }) => {
@@ -28,7 +29,7 @@ const AppIcon: FC<AppIconProps> = ({
         background,
       }}
     >
-      🤖
+      {icon}
     </span>
   )
 }
